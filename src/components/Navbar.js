@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import CartIcon from './svg/shopping-cart-solid.svg'
+import {DataContext} from './Context';
 
 function Navbar() {
+  const contextType = DataContext;
+
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -24,6 +28,7 @@ function Navbar() {
 
   window.addEventListener('resize', showButton);
 
+  /* const {cart} = this.context; */
   return (
     <>
       <nav className='navbar'>
@@ -71,7 +76,13 @@ function Navbar() {
             </li>
           </ul>
           {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
-        </div>
+                    {/* <div className="nav-cart">
+                        <span>{cart.length}</span>
+                        <Link to="/cart">
+                            <img src={CartIcon} alt="" width="20"/>
+                        </Link>
+                    </div>
+ */}        </div>
       </nav>
     </>
   );

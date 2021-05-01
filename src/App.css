@@ -42,3 +42,10 @@
   color: #fff;
   font-size: 100px;
 }
+
+#product{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
